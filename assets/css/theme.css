@@ -1,0 +1,17 @@
+.banner {
+	padding: 100px 0;
+}
+.breadcrumb {
+	background: transparent !important;
+	justify-content: center;
+	display: flex;
+}
+.breadcrumb .breadcrumb-item a {
+	text-decoration: none;
+}
+.widget-title {
+	font-size: 1.2rem;
+	margin: 0;
+	font-weight: 600;
+	text-transform: uppercase;
+}
