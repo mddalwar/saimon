@@ -1,5 +1,9 @@
 <?php
 
+// Avoid directly access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct access denied.' );
+}
 class Saimon_Init {
 	public static $instance = null;
 

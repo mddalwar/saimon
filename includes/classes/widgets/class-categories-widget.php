@@ -1,4 +1,9 @@
 <?php
+
+// Avoid directly access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct access denied.' );
+}
 /**
  * Widget API: WP_Widget_Categories class
  *
@@ -65,7 +70,6 @@ class Saimon_Widget_Categories extends WP_Widget {
 			?>
 
 			<div class="widget">
-				<div class="active">Hello</div>
 				<ul class="list-group list-unstyled">
 					<li class="list-group-item active"><h4 class="widget-title">Widget Title</h4></li>
 					<li><a href="#!" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a></li>

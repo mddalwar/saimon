@@ -1,5 +1,10 @@
 <?php
 
+// Avoid directly access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct access denied.' );
+}
+
 // Check if Class Exists.
 if ( ! class_exists( 'Saimon_Nav_Walker' ) ) :
 	/**

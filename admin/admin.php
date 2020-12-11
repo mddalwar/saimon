@@ -1,3 +1,10 @@
+<?php 
+
+// Avoid directly access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct access denied.' );
+}
+?>
 <div class="option-header shadow mt-3 mb-3 bg-light p-3">
 	<div class="container">
 		<div class="row">
