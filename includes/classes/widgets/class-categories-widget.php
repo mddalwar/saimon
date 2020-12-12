@@ -55,30 +55,36 @@ class Saimon_Widget_Categories extends WP_Widget {
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
 		$count        = ! empty( $instance['count'] ) ? '1' : '0';
+		$total		= 1;
 
 		echo $args['before_widget'];
 
-		if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
-		}
-
-		$cat_args = array(
-			'orderby'      => 'name',
-			'show_count'   => $count,
-		);
+		$cats = get_categories();
 
 			?>
 
 			<div class="widget">
 				<ul class="list-group list-unstyled">
-					<li class="list-group-item active"><h4 class="widget-title">Widget Title</h4></li>
-					<li><a href="#!" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a></li>
-					<li><a href="#!" class="list-group-item list-group-item-action">Morbi leo risus</a></li>
-					<li><a href="#!" class="list-group-item list-group-item-action justify-content-between">Cras justo odio
-					<span class="badge badge-default badge-pill float-right">14</span>
-					</a></li>
-					<li><a href="#!" class="list-group-item list-group-item-action">Porta ac consectetur ac</a></li>
-					<li><a href="#!" class="list-group-item list-group-item-action">Vestibulum at eros</a></li>
+					<li class="list-group-item active">
+						<h4 class="widget-title">
+							<?php 								
+								if ( $title ) {
+									echo $args['before_title'] . $title . $args['after_title'];
+								}
+							?>
+						</h4>
+					</li>
+					<?php 
+						foreach($cats as $cat) :
+					?>
+					<li>
+						<a href="#!" class="list-group-item list-group-item-action justify-content-between"><?php echo $cat->name; ?>
+							<?php if($count == 1) : ?>
+								<span class="badge badge-default badge-pill float-right"><?php echo $cat->count; ?></span>
+							<?php endif; ?>
+						</a>
+					</li>
+					<?php endforeach; ?>
 				</ul>
 			</div>
 

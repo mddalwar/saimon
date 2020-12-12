@@ -21,8 +21,6 @@ if(have_posts()) : ?>
 				<div class="row">
 					<?php while (have_posts()) : the_post(); ?>			
 						<?php get_template_part( 'templates/blog/post', get_post_format() ); ?>
-
-						<?php  ?>
 					<?php endwhile; ?>
 				</div>
 			</div>
