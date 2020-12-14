@@ -8,12 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="option-header shadow mt-3 mb-3 bg-light p-3">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="column-3">
 				<div class="logo text-uppercase">
 					<h2>Saimon</h2>
 				</div>
 			</div>
-			<div class="col-md-9">
+			<div class="column-9">
 				<div class="saimon-links">
 					<ul class="list-unstyled list-inline m-0">
 						<li class="list-inline-item"><a target="_blank" href="http://wpcoderpro.com/contact">Plugins</a></li>

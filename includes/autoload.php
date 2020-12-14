@@ -20,5 +20,6 @@ class Saimon_Autoloader {
 		require_once wp_normalize_path( get_template_directory() . '/includes/classes/class-saimon-init.php' );
 		require_once wp_normalize_path( get_template_directory() . '/includes/classes/class-saimon-nav-walker.php' );
 		require_once wp_normalize_path( get_template_directory() . '/includes/classes/widgets/class-categories-widget.php' );
+		require_once wp_normalize_path( get_template_directory() . '/includes/classes/widgets/class-about-widget.php' );
 	}
 }

@@ -10,13 +10,29 @@ h2 {
 label {
 	margin-bottom: 0;
 }
-#wpbody a {
-	color: #0073aa !important;
-	text-decoration: none;
+.container {
+	max-width: 95%;
+	margin: auto;
 }
-#wpbody a:hover {
-	color: #0073aa !important;
-	text-decoration: none;
+.column-3 {
+	position: relative;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.column-3 {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 25%;
+	-ms-flex: 0 0 25%;
+	flex: 0 0 25%;
+	max-width: 25%;
+}
+.column-9 {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 75%;
+	-ms-flex: 0 0 75%;
+	flex: 0 0 75%;
+	max-width: 75%;
 }
 .option-header .logo h2 {
 	font-weight: 700;

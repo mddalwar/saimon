@@ -63,17 +63,14 @@ class Saimon_Widget_Categories extends WP_Widget {
 
 			?>
 
-			<div class="widget">
-				<ul class="list-group list-unstyled">
-					<li class="list-group-item active">
-						<h4 class="widget-title">
-							<?php 								
-								if ( $title ) {
-									echo $args['before_title'] . $title . $args['after_title'];
-								}
-							?>
-						</h4>
-					</li>
+			<div class="links">
+				<?php 								
+					if ( $title ) {
+						echo $args['before_title'] . $title . $args['after_title'];
+					}
+				?>
+				<ul>
+					
 					<?php 
 						foreach($cats as $cat) :
 					?>

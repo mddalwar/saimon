@@ -16,6 +16,7 @@ class Saimon_Init {
 		add_action( 'wp_enqueue_scripts', [ $this, 'saimon_theme_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'saimon_inline_styles' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'saimon_admin_styles' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'saimon_admin_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'saimon_theme_scripts' ] );
 	}
 	public function saimon_theme_supports(){
@@ -37,7 +38,8 @@ class Saimon_Init {
 
 	public function saimon_theme_styles(){
 		wp_enqueue_style('bootstrap', ASSET_URL . '/css/bootstrap.min.css', array(), null, 'all');
-		wp_enqueue_style('default', ASSET_URL . '/css/default.css', array('bootstrap'), null, 'all');
+		wp_enqueue_style('fontawesome', ASSET_URL . '/css/fontawesome.min.css', array('bootstrap'), null, 'all');
+		wp_enqueue_style('default', ASSET_URL . '/css/default.css', array('fontawesome'), null, 'all');
 		wp_enqueue_style('theme', ASSET_URL . '/css/theme.css', array('default'), null, 'all');
 		wp_enqueue_style('custom', get_stylesheet_uri(), array('theme'), null, 'all');
 	}
@@ -48,8 +50,10 @@ class Saimon_Init {
 	}
 
 	public function saimon_admin_styles(){
-		wp_enqueue_style('bootstrap', ASSET_URL . '/css/bootstrap.min.css', array(), null, 'all');
-		wp_enqueue_style('saimon-admin', ASSET_URL . '/css/saimon-admin.css', array('bootstrap'), null, 'all');
+		wp_enqueue_style('saimon-admin', ASSET_URL . '/css/saimon-admin.css', array(), null, 'all');
+	}
+	public function saimon_admin_scripts(){
+		wp_enqueue_script('saimon-admin', ASSET_URL . '/js/admin.js', array('jquery', 'jquery-migrate'), null, true);
 	}
 	public function saimon_inline_styles() {
 		$banner_bg = get_header_image();
@@ -89,14 +93,15 @@ class Saimon_Init {
 			'description'   => __( 'This is widgets will be shown on the footer', 'saimon' ),
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
-			'before_widget' => '<div class="widget">',
-			'after_widget'  => '</div>',
+			'before_widget' => '<div class="col-md-3"><div class="widget footer-widget">',
+			'after_widget'  => '</div></div>',
 		);
 		register_sidebar( $args );
 	}
 
 	public function saimon_widgets_register(){
 		register_widget('Saimon_Widget_Categories');
+		register_widget('Saimon_Widget_About');
 	}
 
 	public function saimon_admin_menu_register() {
