@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
-		<a class="navbar-brand" href="#">Saimon</a>
+		<a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">Saimon</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>

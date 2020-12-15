@@ -1,3 +1,6 @@
+a, a:hover {
+	text-decoration: none;
+}
 .banner {
 	padding: 100px 0;
 }
@@ -15,20 +18,63 @@
 	font-weight: 600;
 	text-transform: uppercase;
 }
+.widget {
+	margin-bottom: 1rem;
+}
+.widget:last-child {
+	margin-bottom: 0;
+}
 .widget ul {
 	list-style: none;
 	padding: 0;
 	margin: 1rem 0 0 0;
 }
+.widget ul li {
+	margin: 5px 0;
+}
+.footer.dark .widget ul li {
+	color: #f8f8f8;
+}
+.widget ul li a {
+	color: #222222;
+}
 .widget ul li a:hover {
 	color: #266cd8 !important;
 	text-decoration: none;
-	transition: .5s;
+	transition: .3s;
+}
+.widget ul li span {
+	display: block;
+	font-size: 13px;
 }
 .footer .widget ul li a {
 	color: #f8f8f8;
+	padding: 5px 0;
+	margin: 2px 0;
 }
-.footer-widget .widget-title {
+.footer.dark .widget-title {
+	color: #f8f8f8;
+}
+.tagcloud {
+	margin-top: 1rem;
+}
+.tagcloud a {
+	border: 1px solid #222222;
+	font-size: 15px !important;
+	color: #222222;
+	text-decoration: none;
+	padding: 2px 5px;
+	margin: 2px;
+	display: inline-block;
+	transition: .3s;
+}
+.footer.dark .tagcloud a {
+	border-color: #f8f8f8;
+	color: #f8f8f8;
+}
+.tagcloud a:hover {
+	border-color: #266cd8;
+	background: #266cd8;
 	color: #f8f8f8;
 }
 .footer {
@@ -56,5 +102,52 @@
 }
 .footer.dark .widget .social-links ul li a {
 	background: #f8f8f8;
+	color: #266CD8;
+}
+.wp-calendar-table {
+	width: 100%;
+	margin-top: 1rem;
+}
+.widget .gallery-columns-8 .gallery-item,
+.widget .gallery-columns-7 .gallery-item,
+.widget .gallery-columns-6 .gallery-item,
+.widget .gallery-columns-5 .gallery-item,
+.widget .gallery-columns-4 .gallery-item,
+.widget .gallery-columns-3 .gallery-item,
+.widget .gallery-columns-2 .gallery-item
+{
+	float: left;
+	overflow: hidden;
+}
+.widget .gallery {
+	margin-top: 1rem;
+}
+.widget .gallery .gallery-item {
+	margin-bottom: 3px;
+}
+.widget .gallery .gallery-item img {
+	width: 100%;
+	height: auto;
+	margin: 0 3px 0 3px;
+}
+.widget .gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+.widget .gallery .gallery-item:last-child {
+	float: none;
+}
+.search {
+	margin-top: 1rem;
+}
+.footer-widget .search .form-inline button {
+	margin-top: .5rem !important;
+}
+.footer.dark .footer-widget .wp-calendar-table,
+.footer.dark .footer-widget .wp-calendar-table caption,
+.wp-calendar-nav span a {
+	color: #f8f8f8;
+	transition: .3s;
+}
+.wp-calendar-nav span a:hover {
 	color: #266CD8;
 }

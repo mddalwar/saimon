@@ -100,7 +100,6 @@ class Saimon_Init {
 	}
 
 	public function saimon_widgets_register(){
-		register_widget('Saimon_Widget_Categories');
 		register_widget('Saimon_Widget_About');
 	}
 
