@@ -18,11 +18,11 @@ if ( ! defined( 'SAIMON_VERSION' ) ) {
 }
 
 if ( ! defined( 'THEME_DIR' ) ) {
-	define( 'THEME_DIR', wp_normalize_path( get_template_directory()) );
+	define( 'THEME_DIR', wp_normalize_path( get_template_directory() .'/') );
 }
 
 if ( ! defined( 'THEME_URL' ) ) {
-	define( 'THEME_URL', wp_normalize_path( get_template_directory_uri()) );
+	define( 'THEME_URL', wp_normalize_path( get_template_directory_uri() . '/') );
 }
 
 if ( ! defined( 'ASSET_DIR' ) ) {

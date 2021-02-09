@@ -38,7 +38,7 @@ a, a:hover {
 .widget ul li a {
 	color: #222222;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 14px;
 	display: block;
 }
 .widget ul li a:hover {
@@ -52,8 +52,6 @@ a, a:hover {
 }
 .footer .widget ul li a {
 	color: #f8f8f8;
-	padding: 5px 0;
-	margin: 2px 0;
 }
 .footer.dark .widget-title {
 	color: #f8f8f8;
@@ -103,9 +101,22 @@ a, a:hover {
 	background: #266CD8;
 	color: #f8f8f8;
 }
-.footer.dark .widget .social-links ul li a {
+.widget .social-links ul li a {
+	width: 35px;
+	height: 35px;
+	display: block;
+	text-align: center;
+}
+.widget .social-links ul li a i {
+	vertical-align: middle;
+}
+.footer.dark .widget .social-links ul li a {	
 	background: #f8f8f8;
 	color: #266CD8;
+}
+.footer.dark .widget .social-links ul li a:hover {
+	background: #266CD8;
+	color: #f8f8f8 !important;
 }
 .wp-calendar-table {
 	width: 100%;

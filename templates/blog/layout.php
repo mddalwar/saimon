@@ -5,7 +5,7 @@
  * @author     Md Dalwar
  * @link       https://wpcoderpro.com
  * @package    Saimon
- * @subpackage Core
+ * @subpackage Saimon\templates\blog\layout
  * @since      1.0.0
  */
 

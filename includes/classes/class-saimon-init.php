@@ -117,7 +117,7 @@ class Saimon_Init {
 
 	public function saimon_admin_menu_elements(){
 		get_template_part( 'admin/admin' );
-	}
+	}	
 
 }
 $saiman_init = new Saimon_Init();

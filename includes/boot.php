@@ -14,5 +14,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct access denied.' );
 }
 
-require_once wp_normalize_path( get_template_directory() . '/includes/autoload.php' );
+require_once wp_normalize_path( INCLUDE_DIR . 'autoload.php' );
 new Saimon_Autoloader();
