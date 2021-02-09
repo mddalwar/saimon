@@ -37,6 +37,9 @@ a, a:hover {
 }
 .widget ul li a {
 	color: #222222;
+	font-weight: bold;
+	font-size: 16px;
+	display: block;
 }
 .widget ul li a:hover {
 	color: #266cd8 !important;
@@ -45,7 +48,7 @@ a, a:hover {
 }
 .widget ul li span {
 	display: block;
-	font-size: 13px;
+	font-size: 14px;
 }
 .footer .widget ul li a {
 	color: #f8f8f8;
@@ -136,7 +139,7 @@ a, a:hover {
 .widget .gallery .gallery-item:last-child {
 	float: none;
 }
-.search {
+div.search {
 	margin-top: 1rem;
 }
 .footer-widget .search .form-inline button {
@@ -150,4 +153,13 @@ a, a:hover {
 }
 .wp-calendar-nav span a:hover {
 	color: #266CD8;
+}
+.card .blog-thumb {
+	overflow: hidden;
+}
+.card .blog-thumb img {
+	transition: .5s;
+}
+.card:hover img {
+	transform: scale(120%);
 }

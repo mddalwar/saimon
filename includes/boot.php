@@ -5,6 +5,7 @@
  * This file linked all requred files.
  *
  * @package Saimon
+ * @subpackage Saimon\includes\boot
  * @since 1.0
  */
 

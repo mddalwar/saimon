@@ -34,7 +34,7 @@ if ( ! defined( 'ASSET_URL' ) ) {
 }
 
 if ( ! defined( 'INCLUDE_DIR' ) ) {
-	define( 'INCLUDE_DIR', wp_normalize_path( get_template_directory() . '/includes' ) );
+	define( 'INCLUDE_DIR', wp_normalize_path( get_template_directory() . '/includes/' ) );
 }
 
 if ( ! defined( 'INCLUDE_URL' ) ) {
