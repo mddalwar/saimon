@@ -1,4 +1,10 @@
 <?php 
+	
+	// Avoid directly access
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit( 'Direct access denied.' );
+	}
+	
 	if(!function_exists('primary_menu_fallback')){
 		function primary_menu_fallback(){
 			$url = admin_url('nav-menus.php');

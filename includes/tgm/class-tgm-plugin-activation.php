@@ -1,4 +1,10 @@
 <?php
+
+// Avoid directly access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct access denied.' );
+}
+
 /**
  * Plugin installation and activation for WordPress themes.
  *

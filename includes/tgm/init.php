@@ -1,4 +1,8 @@
 <?php
+// Avoid directly access
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct access denied.' );
+}
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.
@@ -31,7 +35,7 @@
  * Plugin:
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
-require_once wp_normalize_path( INCLUDE_DIR . 'tgm/class-tgm-plugin-activation.php' );	
+require_once wp_normalize_path( INCLUDE_DIR . 'tgm/class-tgm-plugin-activation.php' );
 
 add_action( 'tgmpa_register', 'saimon_register_required_plugins' );
 
