@@ -5,14 +5,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct access denied.' );
 }
 
-// Register Machine Type Taxonomy
+// Register Product Type Taxonomy
 
-function machine_types() {
+function product_types() {
 
 	$labels = array(
-		'name'                       => _x( 'Machine Types', 'Machine Types', 'saimon' ),
-		'singular_name'              => _x( 'Machine Type', 'Machine Type', 'saimon' ),
-		'menu_name'                  => __( 'Machine Type', 'saimon' ),
+		'name'                       => _x( 'Product Types', 'Product Types', 'saimon' ),
+		'singular_name'              => _x( 'Product Type', 'Product Type', 'saimon' ),
+		'menu_name'                  => __( 'Product Type', 'saimon' ),
 		'all_items'                  => __( 'All Types', 'saimon' ),
 		'parent_item'                => __( 'Parent Type', 'saimon' ),
 		'parent_item_colon'          => __( 'Parent Type:', 'saimon' ),
@@ -41,7 +41,7 @@ function machine_types() {
 		'show_tagcloud'              => true,
 	);
 
-	register_taxonomy( 'machine_type', array( 'machinaries' ), $args );
+	register_taxonomy( 'product_type', array( 'saimon-products' ), $args );
 
 }
-add_action( 'after_setup_theme', 'machine_types' );
+add_action( 'after_setup_theme', 'product_types' );

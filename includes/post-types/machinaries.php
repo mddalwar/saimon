@@ -6,43 +6,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Register Machinaries Post Type
-function saimon_machinaries() {
+function saimon_products() {
 
 	$labels = array(
-		'name'                  => _x( 'Machines', 'Post Type General Name', 'saimon' ),
-		'singular_name'         => _x( 'Machine', 'Post Type Singular Name', 'saimon' ),
-		'menu_name'             => __( 'Machines', 'saimon' ),
-		'name_admin_bar'        => __( 'Machines', 'saimon' ),
-		'archives'              => __( 'Machine Archives', 'saimon' ),
-		'attributes'            => __( 'Machine Attributes', 'saimon' ),
-		'parent_item_colon'     => __( 'Parent Machine:', 'saimon' ),
-		'all_items'             => __( 'All Machines', 'saimon' ),
-		'add_new_item'          => __( 'Add New Machine', 'saimon' ),
-		'add_new'               => __( 'Add New Machine', 'saimon' ),
-		'new_item'              => __( 'New Machine', 'saimon' ),
-		'edit_item'             => __( 'Edit Machine', 'saimon' ),
-		'update_item'           => __( 'Update Machine', 'saimon' ),
-		'view_item'             => __( 'View Machine', 'saimon' ),
-		'view_items'            => __( 'View Machines', 'saimon' ),
-		'search_items'          => __( 'Search Machine', 'saimon' ),
+		'name'                  => _x( 'Products', 'Products', 'saimon' ),
+		'singular_name'         => _x( 'Product', 'Product', 'saimon' ),
+		'menu_name'             => __( 'Products', 'saimon' ),
+		'name_admin_bar'        => __( 'Products', 'saimon' ),
+		'archives'              => __( 'Product Archives', 'saimon' ),
+		'attributes'            => __( 'Product Attributes', 'saimon' ),
+		'parent_item_colon'     => __( 'Parent Product:', 'saimon' ),
+		'all_items'             => __( 'All Products', 'saimon' ),
+		'add_new_item'          => __( 'Add New Product', 'saimon' ),
+		'add_new'               => __( 'Add New Product', 'saimon' ),
+		'new_item'              => __( 'New Product', 'saimon' ),
+		'edit_item'             => __( 'Edit Product', 'saimon' ),
+		'update_item'           => __( 'Update Product', 'saimon' ),
+		'view_item'             => __( 'View Product', 'saimon' ),
+		'view_items'            => __( 'View Products', 'saimon' ),
+		'search_items'          => __( 'Search Product', 'saimon' ),
 		'not_found'             => __( 'Not found', 'saimon' ),
 		'not_found_in_trash'    => __( 'Not found in Trash', 'saimon' ),
-		'featured_image'        => __( 'Machine Image', 'saimon' ),
-		'set_featured_image'    => __( 'Set machine image', 'saimon' ),
-		'remove_featured_image' => __( 'Remove machine image', 'saimon' ),
-		'use_featured_image'    => __( 'Use as machine image', 'saimon' ),
-		'insert_into_item'      => __( 'Insert into machine', 'saimon' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this machine', 'saimon' ),
-		'items_list'            => __( 'Machines list', 'saimon' ),
-		'items_list_navigation' => __( 'Machines list navigation', 'saimon' ),
-		'filter_items_list'     => __( 'Filter machines list', 'saimon' ),
+		'featured_image'        => __( 'Product Image', 'saimon' ),
+		'set_featured_image'    => __( 'Set Product image', 'saimon' ),
+		'remove_featured_image' => __( 'Remove Product image', 'saimon' ),
+		'use_featured_image'    => __( 'Use as Product image', 'saimon' ),
+		'insert_into_item'      => __( 'Insert into Product', 'saimon' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Product', 'saimon' ),
+		'items_list'            => __( 'Products list', 'saimon' ),
+		'items_list_navigation' => __( 'Products list navigation', 'saimon' ),
+		'filter_items_list'     => __( 'Filter Products list', 'saimon' ),
 	);
 	$args = array(
-		'label'                 => __( 'Machine', 'saimon' ),
-		'description'           => __( 'Add machinaries to this post type', 'saimon' ),
+		'label'                 => __( 'Product', 'saimon' ),
+		'description'           => __( 'Add products to this post type', 'saimon' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies'            => array( 'machine_type' ),
+		'taxonomies'            => array( 'Product_type' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -57,8 +57,8 @@ function saimon_machinaries() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'machinaries', $args );
+	register_post_type( 'saimon-products', $args );
 
 }
 
-add_action('after_setup_theme', 'saimon_machinaries');
+add_action('after_setup_theme', 'saimon_products');

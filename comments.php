@@ -5,11 +5,11 @@
 	}
 ?>
 <div class="container">
-	<h4><?php comments_number(); ?></h4>
+	<h4 class="mb-4 mt-4"><?php comments_number(); ?></h4>
 	<?php
 		wp_list_comments(
 			array(
-				'avatar_size' => 60,
+				'avatar_size' => 80,
 				'style'       => 'div',
 				'walker'		=> new Saimon_Comment_Walker()
 			)

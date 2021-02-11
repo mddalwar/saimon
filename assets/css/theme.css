@@ -1,5 +1,9 @@
 a, a:hover {
 	text-decoration: none;
+	display: inline-block;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
 }
 .banner {
 	padding: 100px 0;
@@ -173,4 +177,32 @@ div.search {
 }
 .card:hover img {
 	transform: scale(120%);
+}
+
+/* Comment Style */
+
+.parent.saimon-comment {
+	margin-left: 0;
+}
+.saimon-comment {
+	margin-left: 100px;
+}
+.saimon-comment-left {
+	float: left;
+	width: 10%;
+}
+.saimon-comment-left img {
+	max-width: 90%;
+	height: auto;
+}
+.saimon-comment-body {
+	overflow: hidden;
+	width: 90%;
+}
+.saimon-comment-heading a {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.comment-content {
+	margin: .5rem 0;
 }
