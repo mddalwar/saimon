@@ -5,7 +5,7 @@
 	}
 ?>
 <div class="container">
-	<article class="blog-post mt-2 mb-2 post-<?php echo $post->ID; ?>">	
+	<article class="blog-post single-blog mt-2 mb-2 post-<?php echo $post->ID; ?>">	
 		<div class="blog-thumb">			
 			<img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
 		</div>			

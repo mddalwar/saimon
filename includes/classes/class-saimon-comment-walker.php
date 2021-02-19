@@ -37,7 +37,7 @@ class Saimon_Comment_Walker extends Walker_Comment {
 				</a>
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation label label-info"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+				<p class="comment-awaiting-moderation text-warning font-weight-bold label label-info"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
 				<?php endif; ?>
 
 				<div class="comment-content">

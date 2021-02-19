@@ -184,7 +184,7 @@ div.search {
 .parent.saimon-comment {
 	margin-left: 0;
 }
-.saimon-comment {
+.saimon-comment .saimon-comment {
 	margin-left: 100px;
 }
 .saimon-comment-left {
@@ -205,4 +205,10 @@ div.search {
 }
 .comment-content {
 	margin: .5rem 0;
+}
+.single-blog .blog-title {
+	font-size: 3rem;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 1rem 0;
 }
