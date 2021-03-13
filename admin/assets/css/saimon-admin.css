@@ -1,0 +1,36 @@
+body {
+	background-color: #f1f1f1 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+h2 {
+	font-size: 1.2rem;
+}
+label {
+	margin-bottom: 0;
+}
+.saimon-logo h2 {
+	font-size: 2rem;
+	margin: 1rem 0;
+}
+.saimon-helper-links ul li {
+	display: inline-block;
+	margin-right: 1rem;
+}
+.saimon-helper-links ul li a {
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	vertical-align: middle;
+}
+.saimon-helper-links ul li:last-child {
+	margin-right: 0;
+}
+.redux-dev-mode-notice-container {
+	display: none;
+}
+.redux-container #redux-header .display_header h2 {
+	margin: 5px 0;
+	font-size: 2rem;
+}

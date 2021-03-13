@@ -21,11 +21,17 @@ class Saimon_Autoloader {
 		require_once wp_normalize_path( INCLUDE_DIR . 'post-types/machine-types.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-product-options.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-init.php' );
-		require_once wp_normalize_path( INCLUDE_DIR . 'functions/admin.php' );	
+		require_once wp_normalize_path( INCLUDE_DIR . 'functions/admin.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'tgm/init.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-nav-walker.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'hooks/comments.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-comment-walker.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/widgets/class-about-widget.php' );
+		require_once wp_normalize_path( INCLUDE_DIR . 'options/ReduxCore/framework.php' );
+		require_once wp_normalize_path( INCLUDE_DIR . 'options/sample/sample-config.php' );
+
+		if(function_exists('vc_map')){
+			require_once wp_normalize_path( THEME_DIR . 'shortcodes/saimon_imagebox.php' );
+		}
 	}
 }

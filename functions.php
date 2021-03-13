@@ -26,11 +26,11 @@ if ( ! defined( 'THEME_URL' ) ) {
 }
 
 if ( ! defined( 'ASSET_DIR' ) ) {
-	define( 'ASSET_DIR', wp_normalize_path( get_template_directory() . '/assets' ) );
+	define( 'ASSET_DIR', wp_normalize_path( get_template_directory() . '/assets/' ) );
 }
 
 if ( ! defined( 'ASSET_URL' ) ) {
-	define( 'ASSET_URL', wp_normalize_path( get_template_directory_uri() . '/assets' ) );
+	define( 'ASSET_URL', wp_normalize_path( get_template_directory_uri() . '/assets/' ) );
 }
 
 if ( ! defined( 'INCLUDE_DIR' ) ) {
@@ -38,7 +38,17 @@ if ( ! defined( 'INCLUDE_DIR' ) ) {
 }
 
 if ( ! defined( 'INCLUDE_URL' ) ) {
-	define( 'INCLUDE_URL', wp_normalize_path( get_template_directory_uri() . '/includes' ) );
+	define( 'INCLUDE_URL', wp_normalize_path( get_template_directory_uri() . '/includes/' ) );
+}
+
+if ( ! defined( 'SAIMON_ADMIN_URL' ) ) {
+	define( 'SAIMON_ADMIN_URL', wp_normalize_path( get_template_directory_uri() . '/admin/' ) );
+}
+
+if ( ! defined( 'SAIMON_ADMIN_DIR' ) ) {
+	define( 'SAIMON_ADMIN_DIR', wp_normalize_path( get_template_directory_uri() . '/admin/' ) );
 }
 
 require_once wp_normalize_path( get_template_directory() . '/includes/boot.php' );
+
+

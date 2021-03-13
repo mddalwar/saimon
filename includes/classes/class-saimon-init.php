@@ -10,7 +10,6 @@ class Saimon_Init {
 	public function __construct(){
 		add_action( 'after_setup_theme', [ $this, 'saimon_theme_supports' ], 10 );
 		add_action( 'after_setup_theme', [ $this, 'saimon_theme_navigations' ], 10 );
-		add_action( 'admin_menu', [ $this, 'saimon_admin_menu_register' ], 10 );
 		add_action( 'widgets_init', [ $this, 'saimon_sidebars'] );
 		add_action( 'widgets_init', [ $this, 'saimon_widgets_register'] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'saimon_theme_styles' ] );
@@ -50,7 +49,7 @@ class Saimon_Init {
 	}
 
 	public function saimon_admin_styles(){
-		wp_enqueue_style('saimon-admin', ASSET_URL . '/css/saimon-admin.css', array(), null, 'all');
+		wp_enqueue_style('saimon-admin', SAIMON_ADMIN_URL . 'assets/css/saimon-admin.css', array(), null, 'all');
 	}
 	public function saimon_admin_scripts(){
 		wp_enqueue_script('saimon-admin', ASSET_URL . '/js/admin.js', array('jquery', 'jquery-migrate'), null, true);
@@ -101,22 +100,6 @@ class Saimon_Init {
 
 	public function saimon_widgets_register(){
 		register_widget('Saimon_Widget_About');
-	}
-
-	public function saimon_admin_menu_register() {
-	    add_menu_page(
-	        __( 'Saimon Options', 'saimon' ),
-	        __( 'Saimon', 'saimon' ),
-	        'manage_options',
-	        'saimon',
-	        [ $this, 'saimon_admin_menu_elements'],
-	        'dashicons-podio',
-	        2
-	    );
-	}
-
-	public function saimon_admin_menu_elements(){
-		get_template_part( 'admin/admin' );
 	}	
 
 }

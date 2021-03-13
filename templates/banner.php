@@ -11,7 +11,7 @@
 		</div>
 		<div class="saimon-breadcrum">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Library</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Data</li>
 			</ol>
