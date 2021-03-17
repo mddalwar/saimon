@@ -7,8 +7,8 @@ if(!function_exists('create_saimonimagebox_shortcode')){
 
 		$atts = extract(shortcode_atts(
 			array(
-				'showbutton' 	=> 'yes',
-				'linkimg' 		=> 'yes',
+				'showbutton' 	=> '',
+				'linkimg' 		=> '',
 				'title'			=> '',
 				'description'	=> '',
 				'imagelink' 	=> '#',
@@ -25,7 +25,7 @@ if(!function_exists('create_saimonimagebox_shortcode')){
 		$title 				= $atts['title'];
 		$description		= $atts['description'];
 		$imagelink 			= $atts['imagelink'];
-		$imageurl			= wp_get_attachment_url($atts['imageurl']);
+		$imageurl			= esc_url(wp_get_attachment_url($atts['imageurl']));
 		$buttontext 		= $atts['buttontext'];
 		$buttonlink 		= $atts['buttonlink'];
 
@@ -38,7 +38,9 @@ if(!function_exists('create_saimonimagebox_shortcode')){
 				<div class="card-body">
 					<h4 class="card-title"><?php echo $title; ?></h4>
 					<p class="card-text"><?php echo $description; ?></p>
-					<a href="<?php echo $buttonlink; ?>" class="btn btn-primary"><?php echo $buttontext; ?></a>
+					<?php if($showbutton == 'true' && $buttonlink != '') : ?>
+						<a href="<?php echo $buttonlink; ?>" class="btn btn-primary"><?php echo $buttontext; ?></a>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
