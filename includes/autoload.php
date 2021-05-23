@@ -30,8 +30,8 @@ class Saimon_Autoloader {
 		require_once wp_normalize_path( INCLUDE_DIR . 'options/ReduxCore/framework.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'options/sample/sample-config.php' );
 
-		if(function_exists('vc_map')){
-			require_once wp_normalize_path( THEME_DIR . 'shortcodes/saimon_imagebox.php' );
+		if( defined( 'ELEMENTOR_PATH' ) ){
+			require INCLUDE_DIR . '/classes/elementor/elementor-widgets-init.php';
 		}
 	}
 }
