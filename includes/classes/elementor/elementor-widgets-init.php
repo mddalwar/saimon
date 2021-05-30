@@ -16,6 +16,7 @@ class Widget_Loader{
 
   private function include_widgets_files(){
     require_once(__DIR__ . '/title.php');
+    require_once(__DIR__ . '/banner.php');
   }
 
   public function register_widgets(){
@@ -23,6 +24,7 @@ class Widget_Loader{
     $this->include_widgets_files();
 
     \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\DfolioHeading());
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SaimonBanner());
 
   }
 
