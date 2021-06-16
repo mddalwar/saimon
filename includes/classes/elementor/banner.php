@@ -147,6 +147,17 @@ class SaimonBanner extends Widget_Base {
         ],
       ]
     );
+
+    $this->add_group_control(
+      \Elementor\Group_Control_Typography::get_type(),
+      [
+        'name' => 'title_typography',
+        'label' => __( 'Typography', 'saimon' ),
+        'scheme' => \Elementor\Scheme_Typography::TYPOGRAPHY_1,
+        'selector' => '{{WRAPPER}} .title',
+      ]
+    );
+
     $this->end_controls_section();
 
     $this->start_controls_section(
