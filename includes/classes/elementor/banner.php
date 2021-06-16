@@ -61,11 +61,11 @@ class SaimonBanner extends Widget_Base {
         'default'   => 'Nemo doloribus, tenetur quod illum pariatur sed. Aperiam sapiente porro voluptatum non, temporibus nihil.'
       ]
     );
-
+    
     $this->add_control(
       'show_button',
       [
-        'label'         => __( 'Button Center', 'saimon' ),
+        'label'         => __( 'Show Button', 'saimon' ),
         'type'          => \Elementor\Controls_Manager::SWITCHER,
         'label_on'      => __( 'Yes', 'saimon' ),
         'label_off'     => __( 'No', 'saimon' ),
@@ -110,12 +110,24 @@ class SaimonBanner extends Widget_Base {
       ]
     );
 
+    $this->add_control(
+      'center_button',
+      [
+        'label'         => __( 'Button Center', 'saimon' ),
+        'type'          => \Elementor\Controls_Manager::SWITCHER,
+        'label_on'      => __( 'Yes', 'saimon' ),
+        'label_off'     => __( 'No', 'saimon' ),
+        'return_value'  => 'yes',
+        'default'       => 'yes',
+      ]
+    );
+
     $this->end_controls_section();
 
     $this->start_controls_section(
-      'style_section',
+      'title_section',
       [
-        'label'         => __( 'Styles', 'saimon' ),
+        'label'         => __( 'Title Style', 'saimon' ),
         'tab'           => \Elementor\Controls_Manager::TAB_STYLE,
       ]
     );
@@ -132,6 +144,75 @@ class SaimonBanner extends Widget_Base {
         ],
         'selectors'     => [
           '{{WRAPPER}} .title' => 'color: {{VALUE}}',
+        ],
+      ]
+    );
+    $this->end_controls_section();
+
+    $this->start_controls_section(
+      'button_section',
+      [
+        'label'         => __( 'Button Style', 'saimon' ),
+        'tab'           => \Elementor\Controls_Manager::TAB_STYLE,
+      ]
+    );
+
+    $this->add_control(
+      'button1_bg',
+      [
+        'label'         => __( 'Button 1 Background', 'saimon' ),
+        'type'          => \Elementor\Controls_Manager::COLOR,
+        'scheme'        => [
+          'type'        => \Elementor\Scheme_Color::get_type(),
+          'value'       => \Elementor\Scheme_Color::COLOR_1,
+        ],
+        'selectors'     => [
+          '{{WRAPPER}} .button1' => 'background-color: {{VALUE}}',
+        ],
+      ]
+    );
+
+    $this->add_control(
+      'button1_color',
+      [
+        'label'         => __( 'Button 1 Text Color', 'saimon' ),
+        'type'          => \Elementor\Controls_Manager::COLOR,
+        'scheme'        => [
+          'type'        => \Elementor\Scheme_Color::get_type(),
+          'value'       => \Elementor\Scheme_Color::COLOR_1,
+        ],
+        'selectors'     => [
+          '{{WRAPPER}} .button1' => 'color: {{VALUE}}',
+        ],
+      ]
+    );
+
+    $this->add_control(
+      'button2_bg',
+      [
+        'label'         => __( 'Button 2 Background', 'saimon' ),
+        'type'          => \Elementor\Controls_Manager::COLOR,
+        'scheme'        => [
+          'type'        => \Elementor\Scheme_Color::get_type(),
+          'value'       => \Elementor\Scheme_Color::COLOR_1,
+        ],
+        'selectors'     => [
+          '{{WRAPPER}} .button2' => 'background-color: {{VALUE}}',
+        ],
+      ]
+    );
+
+    $this->add_control(
+      'button2_color',
+      [
+        'label'         => __( 'Button 2 Text Color', 'saimon' ),
+        'type'          => \Elementor\Controls_Manager::COLOR,
+        'scheme'        => [
+          'type'        => \Elementor\Scheme_Color::get_type(),
+          'value'       => \Elementor\Scheme_Color::COLOR_1,
+        ],
+        'selectors'     => [
+          '{{WRAPPER}} .button2' => 'color: {{VALUE}}',
         ],
       ]
     );
@@ -155,17 +236,28 @@ protected function render(){
   ?>
   <div class="banner-wrapper">
     <div class="container">
-      <?php if($settings['title']){ ?>
-        <h2 class="text-uppercase text-center"><?php echo $settings['title']; ?></h2>
-      <?php } ?>
+      <?php if( $settings['title'] ) : ?>
+        <h2 class="text-uppercase text-center title"><?php echo $settings['title']; ?></h2>
+      <?php endif ?>
 
-      <?php if($settings['descrition']){ ?>
-        <p class="text-dark mt-3"><?php echo $settings['descrition']; ?></p>
-      <?php } ?>
+      <?php if( $settings['descrition'] ) : ?>
+        <p class="text-dark text-center mt-3"><?php echo $settings['descrition']; ?></p>
+      <?php endif ?>
 
-      <?php if($settings['seperator_img']['url'] != $default_img){ ?>
-        <img src="<?php echo $settings['seperator_img']['url'];?>" alt="<?php esc_attr__('heading-image','taqwa'); ?>">
-      <?php } ?>
+      <?php if( $settings['show_button'] ) : ?>
+      <div class="banner-btn <?php if( $settings['center_button'] == 'yes' ){ echo 'text-center'; } ?>">
+
+        <?php if( !empty($settings['button1_text']) && !empty($settings['button1_url']) ) : ?>
+          <a href="<?php echo esc_url( $settings['button1_url'] ); ?>" class="btn button1"><?php echo $settings['button1_text']; ?></a>
+        <?php endif; ?>
+
+        <?php if( !empty($settings['button2_text']) && !empty($settings['button2_url']) ) : ?>
+          <a href="<?php echo esc_url( $settings['button2_url'] ); ?>" class="btn button2"><?php echo $settings['button2_text']; ?></a>
+        <?php endif; ?>
+
+      </div>
+      <?php endif; ?>
+      
     </div>
   </div>
 
