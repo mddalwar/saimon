@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <?php get_header(); ?>
-	<section id="content" class="frontpage">
+	<section id="content" class="frontpage pb-50 pt-50">
 		<?php get_template_part( 'templates/fullwidth' ); ?>
 	</section>
 <?php get_footer(); ?>

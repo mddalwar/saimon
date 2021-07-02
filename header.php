@@ -10,6 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct access denied.' );
 }
+global $saimon;
 
 ?>
 <!DOCTYPE html>
@@ -20,28 +21,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container">
-			<a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">Saimon</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+	  <!-- Container wrapper -->
+	  <div class="container">
+	    <!-- Navbar brand -->
+	    <a class="navbar-brand me-2" href="<?php echo esc_url(home_url()); ?>">
 
-			<div class="collapse navbar-collapse" id="siteNav">
-				<?php 
-					$primary_args = array(
-						'theme_location'		=> 'primary',
-						'walker'				=> new Saimon_Nav_Walker(),
-						'container'				=> '',
-						'menu_class'			=> 'navbar-nav mr-auto',
-						'fallback_cb'			=> 'primary_menu_fallback',
-					);
-					wp_nav_menu($primary_args);
-				?>
-				<form action="<?php echo esc_url(home_url('/')) ?>" class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" name="s" type="text" placeholder="Search">
-					<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-				</form>
+	    	<?php 
+	    		if( !empty( $saimon['imglogo']['url'] ) ){
+	    			echo sprintf( '<img src="%s" alt="%s">',  $saimon['imglogo']['url'], get_bloginfo("name") );
+	    		}elseif( !empty( $saimon['textlogo'] ) ){
+	    			echo $saimon['textlogo'];
+	    		}
+	    	?>
+
+	    </a>
+
+	    <!-- Toggle button -->
+	    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#siteNav" aria-controls="siteNav" aria-expanded="false"aria-label="Toggle navigation">
+	      <i class="fas fa-bars"></i>
+	    </button>
+
+	    <!-- Collapsible wrapper -->
+	    <div class="collapse navbar-collapse" id="siteNav">
+	      <!-- Left links -->
+			<?php 
+				$primary_args = array(
+					'theme_location'		=> 'primary',
+					'walker'				=> new Saimon_Nav_Walker(),
+					'container'				=> '',
+					'menu_class'			=> 'navbar-nav me-auto mb-2 mb-lg-0',
+					'fallback_cb'			=> 'primary_menu_fallback',
+				);
+				wp_nav_menu($primary_args);
+			?>
+	      <!-- Left links -->
+
+			<div class="d-flex align-items-center">
+				<a href="" class="btn btn-link px-3 me-2">Login</a>
+				<a href="" class="btn btn-primary me-3">Sign up for free</a>
 			</div>
-		</div>
+	    </div>
+	    <!-- Collapsible wrapper -->
+	  </div>
+	  <!-- Container wrapper -->
 	</nav>
+	<!-- Navbar -->

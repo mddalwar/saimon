@@ -36,16 +36,15 @@ class Saimon_Init {
 	}
 
 	public function saimon_theme_styles(){
-		wp_enqueue_style('bootstrap', ASSET_URL . '/css/bootstrap.min.css', array(), null, 'all');
-		wp_enqueue_style('fontawesome', ASSET_URL . '/css/fontawesome.min.css', array('bootstrap'), null, 'all');
-		wp_enqueue_style('default', ASSET_URL . '/css/default.css', array('fontawesome'), null, 'all');
-		wp_enqueue_style('theme', ASSET_URL . '/css/theme.css', array('default'), null, 'all');
+		wp_enqueue_style('fontawesome', ASSET_URL . '/css/fontawesome.min.css', array(), null, 'all');
+		wp_enqueue_style('mdb', ASSET_URL . '/css/mdb.min.css', array('fontawesome'), null, 'all');
+		wp_enqueue_style('theme', ASSET_URL . '/css/theme.css', array('mdb'), null, 'all');
 		wp_enqueue_style('custom', get_stylesheet_uri(), array('theme'), null, 'all');
 	}
 
 	public function saimon_theme_scripts(){
-		wp_enqueue_script('bootstrap', ASSET_URL . '/js/bootstrap.min.js', array('jquery'), null, true);
-		wp_enqueue_script('custom', ASSET_URL . '/js/custom.js', array('bootstrap'), null, true);
+		wp_enqueue_script('mdb', ASSET_URL . 'js/mdb.min.js', array('jquery'), null, true);
+		wp_enqueue_script('custom', ASSET_URL . 'js/custom.js', array('mdb'), null, true);
 	}
 
 	public function saimon_admin_styles(){
