@@ -17,14 +17,16 @@ class Widget_Loader{
   private function include_widgets_files(){
     require_once(__DIR__ . '/title.php');
     require_once(__DIR__ . '/banner.php');
+    require_once(__DIR__ . '/button.php');
   }
 
   public function register_widgets(){
 
     $this->include_widgets_files();
 
-    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\DfolioHeading());
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SectionHeading());
     \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SaimonBanner());
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SaimonButton());
 
   }
 

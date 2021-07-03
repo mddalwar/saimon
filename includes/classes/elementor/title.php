@@ -7,7 +7,7 @@ use Elementor\Controls_Manager;
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 
-class DfolioHeading extends Widget_Base{
+class SectionHeading extends Widget_Base{
 
   public function get_name(){
     return 'saimon-title';
