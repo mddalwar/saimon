@@ -188,7 +188,7 @@
 
      */
 
-    // -> START Basic Fields
+    // General Option
     Redux::setSection( $opt_name, array(
         'title'            => __( 'General', 'saimon' ),
         'id'               => 'basic',
@@ -219,37 +219,158 @@
             ),
         )
     ) );
+
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'Radio', 'saimon' ),
-        'id'               => 'basic-Radio',
-        'subsection'       => true,
-        'customizer_width' => '500px',
-        'desc'             => __( 'For full documentation on this field, visit: ', 'saimon' ) . '<a href="//docs.reduxframework.com/core/fields/radio/" target="_blank">docs.reduxframework.com/core/fields/radio/</a>',
-        'fields'           => array(
+        'title'            => __( 'Post Types', 'saimon' ),
+        'id'               => 'post-types',
+        'desc'             => __( 'These are options for custom post types', 'saimon' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-th'
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Service', 'saimon' ),
+        'id'         => 'post_type_services',
+        'subsection' => true,
+        'fields'     => array(
             array(
-                'id'       => 'opt-radio',
-                'type'     => 'radio',
-                'title'    => __( 'Radio Option', 'saimon' ),
-                'subtitle' => __( 'No validation can be done on this field type', 'saimon' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'saimon' ),
-                //Must provide key => value pairs for radio options
-                'options'  => array(
-                    '1' => 'Opt 1',
-                    '2' => 'Opt 2',
-                    '3' => 'Opt 3'
-                ),
-                'default'  => '2'
+                'id'       => 'services-init',
+                'type'     => 'switch',
+                'title'    => __( 'Service Post Type', 'saimon' ),
+                'default'  => 0,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
             ),
             array(
-                'id'       => 'opt-radio-data',
-                'type'     => 'radio',
-                'title'    => __( 'Radio Option w/ Menu Data', 'saimon' ),
-                'subtitle' => __( 'No validation can be done on this field type', 'saimon' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'saimon' ),
-                'data'     => 'menu'
+                'id'       => 'service_type_init',
+                'type'     => 'switch',
+                'required' => array( 'services-init', '=', '1' ),
+                'title'    => __( 'Service Type', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'service_thumbnail_init',
+                'type'     => 'switch',
+                'required' => array( 'services-init', '=', '1' ),
+                'title'    => __( 'Service Thumbnail', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'service_thumbnail_placeholder',
+                'type'     => 'media',
+                'required' => array( 'service_thumbnail_init', '=', '1' ),
+                'title'    => __( 'Thumbnail Placeholder', 'saimon' ),
+            ),
+            array(
+                'id'       => 'service_button_init',
+                'type'     => 'switch',
+                'required' => array( 'services-init', '=', '1' ),
+                'title'    => __( 'Service Button', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'service_button_text',
+                'type'     => 'text',
+                'required' => array( 'service_button_init', '=', '1' ),
+                'title'    => __( 'Button Text', 'saimon' ),
+                'default'  => 'Read More',
+            ),
+            array(
+                'id'       => 'service_button_url',
+                'type'     => 'text',
+                'required' => array( 'service_button_init', '=', '1' ),
+                'title'    => __( 'Button URL', 'saimon' ),
+                'default'  => '#',
             ),
         )
     ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Portfolio', 'saimon' ),
+        'id'         => 'post_type_portfolio',
+        'subsection' => true,
+        'fields'     => array(
+            array(
+                'id'       => 'portfolio-init',
+                'type'     => 'switch',
+                'title'    => __( 'Portfolio Post Type', 'saimon' ),
+                'default'  => 0,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
+            ),
+            array(
+                'id'       => 'portfolio_type_init',
+                'type'     => 'switch',
+                'required' => array( 'portfolio-init', '=', '1' ),
+                'title'    => __( 'Portfolio Type', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'portfolio_thumbnail_init',
+                'type'     => 'switch',
+                'required' => array( 'portfolio-init', '=', '1' ),
+                'title'    => __( 'Portfolio Thumbnail', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'portfolio_thumbnail_placeholder',
+                'type'     => 'media',
+                'required' => array( 'portfolio_thumbnail_init', '=', '1' ),
+                'title'    => __( 'Thumbnail Placeholder', 'saimon' ),
+            ),
+            array(
+                'id'       => 'portfolio_button_init',
+                'type'     => 'switch',
+                'required' => array( 'portfolio-init', '=', '1' ),
+                'title'    => __( 'Portfolio Button', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'portfolio_button_text',
+                'type'     => 'text',
+                'required' => array( 'portfolio_button_init', '=', '1' ),
+                'title'    => __( 'Button Text', 'saimon' ),
+                'default'  => 'Learn More',
+            ),
+            array(
+                'id'       => 'portfolio_button_url',
+                'type'     => 'text',
+                'required' => array( 'portfolio_button_init', '=', '1' ),
+                'title'    => __( 'Button URL', 'saimon' ),
+                'default'  => '#',
+            ),
+        )
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Testimonial', 'saimon' ),
+        'id'         => 'post_type_testimonial',
+        'subsection' => true,
+        'fields'     => array(
+            array(
+                'id'       => 'testimonial-init',
+                'type'     => 'switch',
+                'title'    => __( 'Testimonial Post Type', 'saimon' ),
+                'default'  => 0,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
+            ),
+            array(
+                'id'       => 'testimonial_author_thumbnail_init',
+                'type'     => 'switch',
+                'required' => array( 'testimonial-init', '=', '1' ),
+                'title'    => __( 'Client Thumbnail', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'testimonial_author_thumbnail_placeholder',
+                'type'     => 'media',
+                'required' => array( 'testimonial_author_thumbnail_init', '=', '1' ),
+                'title'    => __( 'Thumbnail Placeholder', 'saimon' ),
+            ),
+        )
+    ) );
+
     Redux::setSection( $opt_name, array(
         'title'      => __( 'Sortable', 'saimon' ),
         'id'         => 'basic-Sortable',
