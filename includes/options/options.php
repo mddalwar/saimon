@@ -132,7 +132,7 @@
         // Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output
         'output_tag'           => true,
         // Allows dynamic CSS to be generated for customizer and google fonts, but stops the dynamic CSS from going to the head
-        // 'footer_credit'     => '',                   // Disable the footer credit of Redux. Please leave if you can help it.
+        'footer_credit'     => 'Footre',                   // Disable the footer credit of Redux. Please leave if you can help it.
 
         // FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
         'database'             => '',
@@ -216,6 +216,62 @@
                 'title'    => __( 'Logo Text', 'saimon' ),
                 'desc'     => __( 'Write a word for text logo', 'saimon' ),
                 'default'   => 'Saimon.',
+            ),
+        )
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Header', 'saimon' ),
+        'id'               => 'saimon-header',
+        'desc'             => __( 'These are options for theme header', 'saimon' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-credit-card'
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Main Navigation', 'saimon' ),
+        'id'         => 'main-navigation',
+        'subsection' => true,
+        'fields'     => array(
+            array(
+                'id'       => 'header_button_init',
+                'type'     => 'switch',
+                'title'    => __( 'Show Header Button', 'saimon' ),
+                'default'  => 0,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
+            ),
+            array(
+                'id'       => 'header_button_text',
+                'type'     => 'text',
+                'required' => array( 'header_button_init', '=', '1' ),
+                'title'    => __( 'Button Text', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'header_button_link',
+                'type'     => 'text',
+                'required' => array( 'header_button_init', '=', '1' ),
+                'title'    => __( 'Button Link', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'header_button_target',
+                'type'     => 'switch',
+                'required' => array( 'header_button_init', '=', '1' ),
+                'title'    => __( 'Target Blank Tab', 'saimon' ),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'header_nav_position',
+                'type'     => 'button_set',
+                'title'    => __( 'Main Navigation Position', 'saimon' ),
+                'options'  => array(
+                    '1' => 'Left',
+                    '2' => 'Center',
+                    '3' => 'Right'
+                ),
+                'default'  => '1'
             ),
         )
     ) );
