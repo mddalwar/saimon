@@ -232,3 +232,13 @@ div.search {
 	text-transform: uppercase;
 	margin: 1rem 0;
 }
+.card .mask {
+	background-color: rgba(251, 251, 251, 0.15);;
+}
+.card .bg-image img {
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
