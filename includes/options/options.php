@@ -237,7 +237,7 @@
                 'id'       => 'header_button_init',
                 'type'     => 'switch',
                 'title'    => __( 'Show Header Button', 'saimon' ),
-                'default'  => 0,
+                'default'  => 1,
                 'on'       => 'Enabled',
                 'off'      => 'Disabled',
             ),
@@ -246,14 +246,14 @@
                 'type'     => 'text',
                 'required' => array( 'header_button_init', '=', '1' ),
                 'title'    => __( 'Button Text', 'saimon' ),
-                'default'  => false,
+                'default'  => 'Button',
             ),
             array(
                 'id'       => 'header_button_link',
                 'type'     => 'text',
                 'required' => array( 'header_button_init', '=', '1' ),
                 'title'    => __( 'Button Link', 'saimon' ),
-                'default'  => false,
+                'default'  => '#',
             ),
             array(
                 'id'       => 'header_button_target',
@@ -268,8 +268,7 @@
                 'title'    => __( 'Main Navigation Position', 'saimon' ),
                 'options'  => array(
                     '1' => 'Left',
-                    '2' => 'Center',
-                    '3' => 'Right'
+                    '2' => 'Right'
                 ),
                 'default'  => '1'
             ),

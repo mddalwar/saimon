@@ -7,14 +7,14 @@ use Elementor\Controls_Manager;
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 
-class SaimonCard extends Widget_Base{
+class SaimonIconBox extends Widget_Base{
 
   public function get_name(){
-    return 'saimon-card';
+    return 'saimon-iconbox';
   }
 
   public function get_title(){
-    return 'Saimon: Card';
+    return 'Saimon: Icon Box';
   }
 
   public function get_icon(){
@@ -29,19 +29,9 @@ class SaimonCard extends Widget_Base{
 
 
     $this->start_controls_section(
-      'card_info',
+      'iconbox_info',
       [
-      'label' 				=> 'Card Info',
-      ]
-    );
-
-    $this->add_control(
-      'card_header',
-      [
-        'label' 			=> 'Card Header Text',
-        'type' 				=> \Elementor\Controls_Manager::TEXT,
-        'default' 		=> 'Header Text',
-        'placeholder'	=> __('Header Text', 'saimon'),
+      'label' 				=> 'Box Info',
       ]
     );
 
@@ -60,31 +50,21 @@ class SaimonCard extends Widget_Base{
       [
         'label' 			=> 'Description',
         'type' 				=> \Elementor\Controls_Manager::TEXTAREA,
-        'default' 		=> 'Your description goes here.',
+        'default' 		=> 'Your descrition goes here.',
         'placeholder'	=> __('Enter Description', 'saimon'),
       ]
     );
 
     $this->add_control(
-      'card_image',
-      [
-        'label' 			=> 'Card Image',
-        'type' 				=> \Elementor\Controls_Manager::MEDIA,
-        'default' 		=> array(
-        	'url'				=> \Elementor\Utils::get_placeholder_image_src(),
-        ),
-      ]
-    );
-
-    $this->add_control(
-      'card_footer',
-      [
-        'label' 			=> 'Card Footer Text',
-        'type' 				=> \Elementor\Controls_Manager::TEXT,
-        'default' 		=> 'Footer Text',
-        'placeholder'	=> __('Header Text', 'saimon'),
-      ]
-    );
+			'box_icon',
+			[
+				'label' => __( 'Select Icon', 'saimon' ),
+				'type' => \Elementor\Controls_Manager::ICONS,
+				'default'	=> array(
+					'value'		=> 'fab fa-accusoft',
+				),
+			]
+		);
 
     $this->add_control(
 			'content_position',
@@ -218,11 +198,9 @@ class SaimonCard extends Widget_Base{
 protected function render(){
     $settings = $this->get_settings_for_display();
 
-    $cardHeader 	= isset( $settings['card_header'] ) ? $settings['card_header'] : 'Header Text';
-    $cardTitle 	= isset( $settings['card_title'] ) ? $settings['card_title'] : 'Card Title';
-    $description 	= isset( $settings['descrition'] ) ? $settings['descrition'] : 'Description';
-    $cardImage 	= isset( $settings['card_image']['url'] ) ? $settings['card_image']['url'] : '';
-    $cardFooter 	= isset( $settings['card_footer'] ) ? $settings['card_footer'] : 'Footer Text';
+    $cardTitle 			= isset( $settings['card_title'] ) ? $settings['card_title'] : 'Card Title';
+    $description 		= isset( $settings['descrition'] ) ? $settings['descrition'] : 'Description';
+    $cardIcon 			= isset( $settings['box_icon']['value'] ) ? $settings['box_icon']['value'] : '';
     $contentPosition = isset( $settings['content_position'] ) ? $settings['content_position'] : '';
 
     $buttonShow 	= isset( $settings['button_show'] ) ? $settings['button_show'] : '';
@@ -236,14 +214,10 @@ protected function render(){
 
   ?>
 	<div class="card <?php echo $contentPosition; ?>">
-		<?php if( !empty( $cardHeader ) ) : ?>
-			<div class="card-header"><?php echo $cardHeader; ?></div>
-		<?php endif; ?>
 
-		<?php if( !empty( $cardImage ) ) : ?>
-			<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-		    <img src="<?php echo $cardImage; ?>" class="img-fluid" />
-		    <a href="#!"><div class="mask"></div></a>
+		<?php if( !empty( $cardIcon ) ) : ?>
+			<div class="iconbox-icon" >
+		    <i class="<?php echo $cardIcon; ?>"></i>
 		  </div>
 		<?php endif; ?>
 		<div class="card-body">
@@ -267,9 +241,6 @@ protected function render(){
 			  </div>
 			<?php endif; ?>
 		</div>
-		<?php if( !empty( $cardFooter ) ) : ?>
-			<div class="card-footer text-muted"><?php echo $cardFooter; ?></div>
-		<?php endif; ?>
 	</div>
 
   <?php

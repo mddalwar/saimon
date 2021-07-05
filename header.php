@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 global $saimon;
 
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -44,14 +45,15 @@ global $saimon;
 	    </button>
 
 	    <!-- Collapsible wrapper -->
-	    <div class="collapse navbar-collapse" id="siteNav">
+	    <div class="<?php echo pm_con_class(); ?>" id="siteNav">
 	      <!-- Left links -->
 			<?php 
+
 				$primary_args = array(
 					'theme_location'		=> 'primary',
 					'walker'				=> new Saimon_Nav_Walker(),
 					'container'				=> '',
-					'menu_class'			=> 'navbar-nav me-auto mb-2 mb-lg-0',
+					'menu_class'			=> pm_class(),
 					'fallback_cb'			=> 'primary_menu_fallback',
 				);
 				wp_nav_menu($primary_args);
@@ -59,8 +61,7 @@ global $saimon;
 	      <!-- Left links -->
 
 			<div class="d-flex align-items-center">
-				<a href="" class="btn btn-link px-3 me-2">Login</a>
-				<a href="" class="btn btn-primary me-3">Sign up for free</a>
+				<?php do_action( 'header_button' ); ?>
 			</div>
 	    </div>
 	    <!-- Collapsible wrapper -->

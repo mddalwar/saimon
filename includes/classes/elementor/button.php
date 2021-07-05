@@ -14,7 +14,7 @@ class SaimonButton extends Widget_Base{
   }
 
   public function get_title(){
-    return 'Saimon Button';
+    return 'Saimon: Button';
   }
 
   public function get_icon(){

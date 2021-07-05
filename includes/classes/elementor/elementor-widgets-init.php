@@ -19,6 +19,7 @@ class Widget_Loader{
     require_once(__DIR__ . '/banner.php');
     require_once(__DIR__ . '/button.php');
     require_once(__DIR__ . '/card.php');
+    require_once(__DIR__ . '/iconbox.php');
   }
 
   public function register_widgets(){
@@ -29,6 +30,7 @@ class Widget_Loader{
     \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SaimonBanner());
     \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SaimonButton());
     \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SaimonCard());
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Widgets\SaimonIconBox());
 
   }
 
