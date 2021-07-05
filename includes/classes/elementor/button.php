@@ -53,21 +53,31 @@ class SaimonButton extends Widget_Base{
       ]
     );
 
+    $this->end_controls_section();
+
+    $this->start_controls_section(
+      'button_settings',
+      [
+      'label' 		=> 'Button Settings',
+      ]
+    ); 		
+
     $this->add_control(
-		'button_position',
-		[
-			'label' 			=> __( 'Button Position', 'saimon' ),
-			'type' 				=> Controls_Manager::SELECT,
-			'options' 			=> [
-				'text-left'		=> 'Left',
-				'text-center' 	=> 'Center',
-				'text-right' 	=> 'Right',
-			],
-			'default' 			=> '',
-		]
-	);
+			'button_position',
+			[
+				'label' 			=> __( 'Button Position', 'saimon' ),
+				'type' 				=> Controls_Manager::SELECT,
+				'options' 			=> [
+					'text-left'		=> 'Left',
+					'text-center' 	=> 'Center',
+					'text-right' 	=> 'Right',
+				],
+				'default' 			=> '',
+			]
+		);
 
     $this->end_controls_section();
+
 
     $this->start_controls_section(
 		'saimon_button_style',

@@ -66,13 +66,24 @@ class SaimonCard extends Widget_Base{
     );
 
     $this->add_control(
-			'button_options',
-			[
-				'label' => __( 'Button Options', 'saimon' ),
-				'type' => \Elementor\Controls_Manager::HEADING,
-				'separator' => 'before / after',
-			]
-		);
+      'card_image',
+      [
+        'label' 			=> 'Card Image',
+        'type' 				=> \Elementor\Controls_Manager::MEDIA,
+        'default' 		=> array(
+        	'url'				=> \Elementor\Utils::get_placeholder_image_src(),
+        ),
+      ]
+    );
+
+    $this->end_controls_section();
+
+    $this->start_controls_section(
+      'button_option',
+      [
+      	'label' 		=> 'Button',
+      ]
+    ); 
 
     $this->add_control(
       'show_button',
