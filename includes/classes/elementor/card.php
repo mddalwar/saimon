@@ -31,9 +31,9 @@ class SaimonCard extends Widget_Base{
     $this->start_controls_section(
       'section_content',
       [
-      'label' 		=> 'Card Info',
+      'label' 				=> 'Card Info',
       ]
-    );    
+    );
 
     $this->add_control(
       'card_header',
@@ -48,9 +48,9 @@ class SaimonCard extends Widget_Base{
     $this->add_control(
       'card_title',
       [
-        'label' 		=> 'Title',
-        'type' 			=> \Elementor\Controls_Manager::TEXT,
-        'default' 	=> 'Title goes here',
+        'label' 			=> 'Title',
+        'type' 				=> \Elementor\Controls_Manager::TEXT,
+        'default' 		=> 'Title goes here',
         'placeholder'	=> __('Title Text', 'saimon'),
       ]
     );
@@ -59,7 +59,7 @@ class SaimonCard extends Widget_Base{
       'description',
       [
         'label' 			=> 'Description',
-        'type' 				=> \Elementor\Controls_Manager::TEXT,
+        'type' 				=> \Elementor\Controls_Manager::TEXTAREA,
         'default' 		=> 'Your descrition goes here.',
         'placeholder'	=> __('Enter Description', 'saimon'),
       ]
@@ -76,6 +76,30 @@ class SaimonCard extends Widget_Base{
       ]
     );
 
+    $this->add_control(
+      'card_footer',
+      [
+        'label' 			=> 'Card Footer Text',
+        'type' 				=> \Elementor\Controls_Manager::TEXT,
+        'default' 		=> 'Footer Text',
+        'placeholder'	=> __('Header Text', 'saimon'),
+      ]
+    );
+
+    $this->add_control(
+			'content_position',
+			[
+				'label' 				=> __( 'Content Position', 'saimon' ),
+				'type' 					=> Controls_Manager::SELECT,
+				'options' 			=> [
+					''						=> 'Default',
+					'text-left'		=> 'Left',
+					'text-center' => 'Center',
+					'text-right' 	=> 'Right',
+				],
+				'default' 			=> 'text-center',
+			]
+		);
     $this->end_controls_section();
 
     $this->start_controls_section(
@@ -86,7 +110,7 @@ class SaimonCard extends Widget_Base{
     ); 
 
     $this->add_control(
-      'show_button',
+      'button_show',
       [
         'label'         => __( 'Show Button', 'saimon' ),
         'type'          => \Elementor\Controls_Manager::SWITCHER,
@@ -115,22 +139,7 @@ class SaimonCard extends Widget_Base{
         'default' 		=> '#',
         'placeholder'	=> __('Button Link', 'saimon'),
       ]
-    );
-
-    $this->add_control(
-		'button_position',
-		[
-			'label' 				=> __( 'Button Position', 'saimon' ),
-			'type' 					=> Controls_Manager::SELECT,
-			'options' 			=> [
-				''						=> 'Default',
-				'text-left'		=> 'Left',
-				'text-center' => 'Center',
-				'text-right' 	=> 'Right',
-			],
-			'default' 			=> '',
-		]
-	);
+    );    
 
     $this->end_controls_section();
 
@@ -202,34 +211,65 @@ class SaimonCard extends Widget_Base{
 		]
 	);
 
+	$this->end_controls_section();
+
   }
 
 protected function render(){
     $settings = $this->get_settings_for_display();
 
+    $cardHeader 	= isset( $settings['card_header'] ) ? $settings['card_header'] : 'Header Text';
+    $cardTitle 	= isset( $settings['card_title'] ) ? $settings['card_title'] : 'Card Title';
+    $description 	= isset( $settings['descrition'] ) ? $settings['descrition'] : 'Description';
+    $cardImage 	= isset( $settings['card_image']['url'] ) ? $settings['card_image']['url'] : '';
+    $cardFooter 	= isset( $settings['card_footer'] ) ? $settings['card_footer'] : 'Footer Text';
+    $contentPosition = isset( $settings['content_position'] ) ? $settings['content_position'] : '';
+
+    $buttonShow 	= isset( $settings['button_show'] ) ? $settings['button_show'] : '';
     $buttonText 	= isset( $settings['button_text'] ) ? $settings['button_text'] : 'Read More';
     $buttonLink 	= isset( $settings['button_link'] ) ? $settings['button_link'] : '#';
     $buttonColor 	= isset( $settings['button_color'] ) ? $settings['button_color'] : 'primary';
     $buttonType 	= isset( $settings['button_type'] ) ? $settings['button_type'] : '';
     $buttonShape 	= isset( $settings['button_shape'] ) ? $settings['button_shape'] : '';
     $buttonSize 	= isset( $settings['button_size'] ) ? $settings['button_size'] : '';
-    $buttonPosition = isset( $settings['button_position'] ) ? $settings['button_position'] : '';
+    
 
   ?>
-	<div class="card text-center">
-		<div class="card-header">Featured</div>
-		<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-	    <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-	    <a href="#!">
-	      <div class="mask"></div>
-	    </a>
-	  </div>
+	<div class="card <?php echo $contentPosition; ?>">
+		<?php if( !empty( $cardHeader ) ) : ?>
+			<div class="card-header"><?php echo $cardHeader; ?></div>
+		<?php endif; ?>
+
+		<?php if( !empty( $cardImage ) ) : ?>
+			<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+		    <img src="<?php echo $cardImage; ?>" class="img-fluid" />
+		    <a href="#!"><div class="mask"></div></a>
+		  </div>
+		<?php endif; ?>
 		<div class="card-body">
-			<h5 class="card-title">Special title treatment</h5>
-			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			<a href="#" class="btn btn-primary">Button</a>
+			<?php if( !empty( $cardTitle ) ) : ?>
+				<h5 class="card-title"><?php echo $cardTitle; ?></h5>
+			<?php endif; ?>
+
+			<?php if( !empty( $description ) ) : ?>
+				<p class="card-text"><?php echo $description; ?></p>
+			<?php endif; ?>
+
+			<?php if( !empty( $buttonText ) && !empty( $buttonLink ) && $buttonShow == 'yes' ) : ?>
+				<div class="saimon-button">
+			  	<a href="<?php echo $buttonLink; ?>" 
+			  		class="btn 
+			  		btn-<?php echo $buttonType; ?><?php echo $buttonColor; ?> 
+			  		<?php echo $buttonShape; ?> 
+			  		<?php echo $buttonSize; ?>">
+			  		<?php echo $buttonText; ?>
+			  	</a>
+			  </div>
+			<?php endif; ?>
 		</div>
-		<div class="card-footer text-muted">2 days ago</div>
+		<?php if( !empty( $cardFooter ) ) : ?>
+			<div class="card-footer text-muted"><?php echo $cardFooter; ?></div>
+		<?php endif; ?>
 	</div>
 
   <?php
