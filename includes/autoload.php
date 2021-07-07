@@ -17,16 +17,16 @@ class Saimon_Autoloader {
 
 	public function __construct(){
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon.php' );
-		require_once wp_normalize_path( INCLUDE_DIR . 'post-types/machinaries.php' );
-		require_once wp_normalize_path( INCLUDE_DIR . 'post-types/machine-types.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-product-options.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-init.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'functions/public-functions.php' );
+		require_once wp_normalize_path( INCLUDE_DIR . 'functions/woocommerce.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'functions/admin.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'tgm/init.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-nav-walker.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'hooks/public-hooks.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'hooks/comments.php' );
+		require_once wp_normalize_path( INCLUDE_DIR . 'hooks/woocommerce.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-comment-walker.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/widgets/class-about-widget.php' );
 

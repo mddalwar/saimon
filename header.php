@@ -61,6 +61,9 @@ global $saimon;
 	      <!-- Left links -->
 
 			<div class="d-flex align-items-center">
+				<a class="me-2" href="#!" role="button">
+					<i class="fas fa-cart-arrow-down fa-lg"></i>
+				</a>
 				<?php do_action( 'header_button' ); ?>
 			</div>
 	    </div>
