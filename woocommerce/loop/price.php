@@ -25,7 +25,7 @@ $sell_price = $product->get_sale_price();
 ?>
 
 
-<?php if ( isset( $regular_price ) ) : ?>
+<?php if ( !empty( $regular_price ) || !empty( $sell_price ) ) : ?>
 	<div class="price">
         <span>
             <?php

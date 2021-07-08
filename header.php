@@ -61,10 +61,19 @@ global $saimon;
 	      <!-- Left links -->
 
 			<div class="d-flex align-items-center">
-				<a class="me-2" href="#!" role="button">
-					<i class="fas fa-cart-arrow-down fa-lg"></i>
-				</a>
+				<?php 
+					if( $saimon['header_cart_position'] == 1 ){
+						do_action( 'header_cart' );
+					}
+				?>
+
 				<?php do_action( 'header_button' ); ?>
+
+				<?php 
+					if( $saimon['header_cart_position'] == 2 ){
+						do_action( 'header_cart' );
+					}
+				?>
 			</div>
 	    </div>
 	    <!-- Collapsible wrapper -->

@@ -55,7 +55,7 @@ $allowed_html = array(
 	);
 	?>
 </p>
-
+	
 <?php
 	/**
 	 * My Account dashboard.
@@ -79,3 +79,4 @@ $allowed_html = array(
 	do_action( 'woocommerce_after_my_account' );
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+?>

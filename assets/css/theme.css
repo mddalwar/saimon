@@ -288,17 +288,16 @@ select {
 }
 .product-title {
 	font-size: 18px;
-	margin: 1rem 0;
 }
 .product .woocommerce-LoopProduct-link {
-	overflow: hidden;
+	overflow: hidden !important;
 }
 .woocommerce span.onsale {
 	padding: 3px 10px;
 	background-color: #1266f1;
 }
 .price {
-	margin: 1rem 0;
+	margin: .5rem 0;
 }
 .price span {
 	font-weight: bold !important;
@@ -306,9 +305,13 @@ select {
 .attachment-woocommerce_thumbnail{
 	transition: .5s;
 }
-.attachment-woocommerce_thumbnail:hover {
+.product:hover .attachment-woocommerce_thumbnail {
 	transform: scale(1.1);
 	transition: .5s;
+}
+.product-title {
+	font-size: 20px;
+	margin: .5rem 0;
 }
 
 .added_to_cart {
@@ -377,4 +380,36 @@ li a.page-numbers {
 }
 .woocommerce .quantity .qty {
 	height: 2.3em !important;
+}
+.comment-form-rating label {
+	display: block !important;	
+	margin-bottom: .5rem;
+}
+.woocommerce #review_form #respond p {
+	display: inline-block !important;
+	vertical-align: middle !important;
+}
+input.submit {
+	position: relative !important;
+	display: inline-block !important;
+	vertical-align: bottom !important;
+	padding: .5rem 1rem .5rem !important;
+	font-size: .75rem !important;
+	line-height: 1.5 !important;
+	color: #ffffff !important;
+	background-color: #1266f1 !important;
+	text-transform: uppercase !important;
+	border: 0 !important;
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.2),0 2px 10px 0 rgba(0,0,0,.1) !important;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.2),0 2px 10px 0 rgba(0,0,0,.1) !important;
+	border-radius: 5px !important;
+}
+.related.products .product-wrapper .container {
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+}
+.related-title, .tab-title, .woocommerce-Reviews-title {
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	font-size: 20px;
 }

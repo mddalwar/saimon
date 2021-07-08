@@ -29,7 +29,7 @@ if( $column ){
 }
 ?>
 <div class="product col-lg-<?php echo $column; ?> col-md-4 col-sm-6">
-	<div <?php wc_product_class( '', $product ); ?>>
+	<div <?php wc_product_class( '', $product ); ?>>		
 		<?php
 		/**
 		 * Hook: woocommerce_before_shop_loop_item.
@@ -43,9 +43,11 @@ if( $column ){
 		 *
 		 * @hooked woocommerce_show_product_loop_sale_flash - 10
 		 * @hooked woocommerce_template_loop_product_thumbnail - 10
+		 * @hooked saimon_product_loop_link_close - 10
 		 */
 		do_action( 'woocommerce_before_shop_loop_item_title' );
-
+		?>
+		<?php
 		/**
 		 * Hook: woocommerce_shop_loop_item_title.
 		 *

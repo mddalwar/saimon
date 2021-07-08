@@ -40,3 +40,26 @@ function saimon_product_loop_link_close(){
 }
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 10 );
 add_action('woocommerce_before_shop_loop_item_title', 'saimon_product_loop_link_close', 10);
+
+
+
+
+/**
+ * Show notice if cart is empty.
+ *
+ * @since 3.1.0
+ */
+function saimon_empty_cart_message() {
+	echo '<div class="container"><p class="cart-empty woocommerce-info">' . wp_kses_post( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'woocommerce' ) ) ) . '</p></div>';
+}
+
+remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
+add_action( 'woocommerce_cart_is_empty', 'saimon_empty_cart_message', 10 );
+
+function saimon_output_all_notices() {
+	echo '<div class="container"><div class="woocommerce-notices-wrapper">';
+	wc_print_notices();
+	echo '</div></div>';
+}
+remove_action( 'woocommerce_cart_is_empty', 'woocommerce_output_all_notices', 5 );
+add_action( 'woocommerce_cart_is_empty', 'saimon_output_all_notices', 5 );

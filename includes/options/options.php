@@ -132,43 +132,13 @@
         // Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output
         'output_tag'           => true,
         // Allows dynamic CSS to be generated for customizer and google fonts, but stops the dynamic CSS from going to the head
-        'footer_credit'     => 'Footre',                   // Disable the footer credit of Redux. Please leave if you can help it.
+        'footer_credit'     => 'These options provided by <a href="#">Saimon</a>',                   // Disable the footer credit of Redux. Please leave if you can help it.
 
         // FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
         'database'             => '',
         // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
         'use_cdn'              => true,
         // If you prefer not to use the CDN for Select2, Ace Editor, and others, you may download the Redux Vendor Support plugin yourself and run locally or embed it in your code.
-
-        // HINTS
-        'hints'                => array(
-            'icon'          => 'el el-question-sign',
-            'icon_position' => 'right',
-            'icon_color'    => 'lightgray',
-            'icon_size'     => 'normal',
-            'tip_style'     => array(
-                'color'   => 'red',
-                'shadow'  => true,
-                'rounded' => false,
-                'style'   => '',
-            ),
-            'tip_position'  => array(
-                'my' => 'top left',
-                'at' => 'bottom right',
-            ),
-            'tip_effect'    => array(
-                'show' => array(
-                    'effect'   => 'slide',
-                    'duration' => '500',
-                    'event'    => 'mouseover',
-                ),
-                'hide' => array(
-                    'effect'   => 'slide',
-                    'duration' => '500',
-                    'event'    => 'click mouseleave',
-                ),
-            ),
-        )
     );
 
 
@@ -176,17 +146,6 @@
 
     Redux::setHelpTab( $opt_name, $tabs );
 
-    // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'saimon' );
-    Redux::setHelpSidebar( $opt_name, $content );
-
-
-    /*
-
-        As of Redux 3.5+, there is an extensive API. This API can be used in a mix/match mode allowing for
-
-
-     */
 
     // General Option
     Redux::setSection( $opt_name, array(
@@ -257,10 +216,14 @@
             ),
             array(
                 'id'       => 'header_button_target',
-                'type'     => 'switch',
+                'type'     => 'button_set',
                 'required' => array( 'header_button_init', '=', '1' ),
-                'title'    => __( 'Target Blank Tab', 'saimon' ),
-                'default'  => false,
+                'title'    => __( 'Button Target', 'saimon' ),
+                'options'  => array(
+                    '1' => 'Self Tab',
+                    '2' => 'Blank Tab'
+                ),
+                'default'  => '1'
             ),
             array(
                 'id'       => 'header_nav_position',
@@ -269,6 +232,56 @@
                 'options'  => array(
                     '1' => 'Left',
                     '2' => 'Right'
+                ),
+                'default'  => '1'
+            ),
+        )
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'      => __( 'Cart', 'saimon' ),
+        'id'         => 'header-cart',
+        'subsection' => true,
+        'fields'     => array(
+            array(
+                'id'       => 'header_cart_init',
+                'type'     => 'switch',
+                'title'    => __( 'Show Cart Icon', 'saimon' ),
+                'default'  => 1,
+                'on'       => 'Enabled',
+                'off'      => 'Disabled',
+            ),
+            array(
+                'id'       => 'header_cart_text',
+                'type'     => 'text',
+                'required' => array( 'header_cart_init', '=', '1' ),
+                'title'    => __( 'Font Icon Class', 'saimon' ),
+            ),
+            array(
+                'id'       => 'header_cart_link',
+                'type'     => 'text',
+                'required' => array( 'header_cart_init', '=', '1' ),
+                'title'    => __( 'Custom Cart URL', 'saimon' ),
+            ),
+            array(
+                'id'       => 'header_cart_target',
+                'type'     => 'button_set',
+                'required' => array( 'header_cart_init', '=', '1' ),
+                'title'    => __( 'Cart Link Target', 'saimon' ),
+                'options'  => array(
+                    '1' => 'Self Tab',
+                    '2' => 'Blank Tab'
+                ),
+                'default'  => '1'
+            ),
+            array(
+                'id'       => 'header_cart_position',
+                'type'     => 'button_set',
+                'required' => array( 'header_cart_init', '=', '1' ),
+                'title'    => __( 'Cart Icon Position', 'saimon' ),
+                'options'  => array(
+                    '1' => 'Before Button',
+                    '2' => 'After Button'
                 ),
                 'default'  => '1'
             ),

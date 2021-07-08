@@ -20,3 +20,22 @@ function saimon_header_button(){
 }
 
 add_action('header_button', 'saimon_header_button');
+
+function saimon_header_cart_button(){
+	global $saimon;
+	$wooCartUrl	= function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : '';
+	$cart 		= $saimon['header_cart_init'];
+	$cartText 	= isset( $saimon['header_cart_text'] ) ? $saimon['header_cart_text'] : '';
+	$cartLink 	= !empty( $saimon['header_cart_link'] ) ? $saimon['header_cart_link'] : $wooCartUrl;
+	$cartIcon	= !empty( $cartText ) ? '<i class="fa-lg ' . $cartText .'"></i>' : '<i class="fas fa-cart-arrow-down fa-lg"></i>';
+	$cartTarget	= '';
+
+	if( $saimon['header_cart_target'] == 2 ){
+		$cartTarget = 'target="_blank"';
+	}
+
+	if( $cart == 1 ){
+		printf('<a href="%s" class="me-3" %s>%s</a>', $cartLink, $cartTarget, $cartIcon);
+	}
+}
+add_action('header_cart', 'saimon_header_cart_button');
