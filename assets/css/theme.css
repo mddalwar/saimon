@@ -362,3 +362,19 @@ li a.page-numbers {
 	padding: 8px 15px !important;
 	border-radius: 5px;
 }
+.checkout-button {
+	min-width: inherit !important;
+	display: inline-block !important;
+	padding: 10px 15px !important;
+	text-transform: capitalize !important;
+	font-size: 15px !important;
+}
+.woocommerce-message {
+	border-color: #1266f1 !important;
+}
+.woocommerce-message::before {
+	color: #1266f1 !important;
+}
+.woocommerce .quantity .qty {
+	height: 2.3em !important;
+}
