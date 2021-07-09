@@ -24,6 +24,7 @@ class Saimon_Autoloader {
 		require_once wp_normalize_path( INCLUDE_DIR . 'tgm/init.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-nav-walker.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'hooks/public-hooks.php' );
+		require_once wp_normalize_path( INCLUDE_DIR . 'hooks/admin-hooks.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'hooks/comments.php' );
 		
 		if( class_exists( 'WooCommerce' ) ){
