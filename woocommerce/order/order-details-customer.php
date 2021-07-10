@@ -60,3 +60,9 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 	<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
 
 </section>
+<div class="checked-out-btn text-center">	
+	<?php 
+		printf( '<a href="%s" class="btn btn-primary btn-lg">Continoue Shopping</a>', wc_get_page_permalink( 'shop' ) );
+	?>
+</div>
+

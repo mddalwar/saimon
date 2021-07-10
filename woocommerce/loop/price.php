@@ -29,6 +29,9 @@ $sell_price = $product->get_sale_price();
 	<div class="price">
         <span>
             <?php
+                if( !empty( $regular_price ) ){
+                    echo 'Price: ';
+                }
                 if( !empty( $sell_price ) ){
                     echo '<del>';
                 }

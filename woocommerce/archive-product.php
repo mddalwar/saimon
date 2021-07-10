@@ -20,9 +20,9 @@ defined( 'ABSPATH' ) || exit;
 get_header( 'shop' );
 
 ?>
-<div class="shop-page page-space">
-	<div class="shop-page-info overflow-hidden">
-		<div class="container">
+<div class="shop-page page-space">	
+	<div class="container">
+		<div class="shop-page-info overflow-hidden">
 			<?php
 			if ( woocommerce_product_loop() ) {
 
@@ -36,7 +36,6 @@ get_header( 'shop' );
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
 		</div>
-	</div>
 
 	<?php
 
@@ -79,6 +78,7 @@ get_header( 'shop' );
 	 */
 	do_action( 'woocommerce_after_main_content' );
 	?>
+	</div>
 </div>
 <?php
 get_footer( 'shop' );

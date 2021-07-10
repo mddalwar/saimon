@@ -7,9 +7,9 @@ if( ! function_exists( 'saimon_product_orderby' )){
 
 	function saimon_product_orderby(){
 		$saimon_product_orderby = array(
-			'menu_order' => __( 'Product By', 'saimon' ),
-			'popularity' => __( 'Popularity', 'saimon' ),
-			'rating'     => __( 'Average rating', 'saimon' ),
+			'menu_order' => __( 'Filter By', 'saimon' ),
+			'popularity' => __( 'Popular', 'saimon' ),
+			'rating'     => __( 'Best Rated', 'saimon' ),
 			'date'       => __( 'Latest', 'saimon' ),
 			'price'      => __( 'Price: Low to High', 'saimon' ),
 			'price-desc' => __( 'Price: High to Low', 'saimon' ),
@@ -122,3 +122,63 @@ function saimon_woocommerce_billing_fields( $fields ){
 	return $fields;
 }
 add_filter( 'woocommerce_billing_fields', 'saimon_woocommerce_billing_fields' );
+
+
+function saimon_woocommerce_shipping_fields( $fields ){
+	// First Name
+	$fields['shipping_first_name']['class'][] = 'form-group';
+	$fields['shipping_first_name']['input_class'][] = 'form-control';
+	$fields['shipping_first_name']['placeholder'] = 'Your First Name';
+
+	// Last Name
+	$fields['shipping_last_name']['class'][] = 'form-group';
+	$fields['shipping_last_name']['input_class'][] = 'form-control';
+	$fields['shipping_last_name']['placeholder'] = 'Your Last Name';
+
+	// Company Name
+	$fields['shipping_company']['class'][] = 'form-group';
+	$fields['shipping_company']['input_class'][] = 'form-control';
+	$fields['shipping_company']['placeholder'] = 'Enter Company Name';
+
+	// Country Selection
+	$fields['shipping_country']['class'][] = 'form-group';
+	$fields['shipping_country']['input_class'][] = 'form-control custom-select';
+
+	// Address Line 1
+	$fields['shipping_address_1']['class'][] = 'form-group';
+	$fields['shipping_address_1']['input_class'][] = 'form-control';
+	$fields['shipping_address_1']['placeholder'] = 'Address Line 1';
+
+	// Address Line 2
+	$fields['shipping_address_2']['class'][] = 'form-group';
+	$fields['shipping_address_2']['input_class'][] = 'form-control';
+	$fields['shipping_address_2']['placeholder'] = 'Address Line 2';
+
+	// City
+	$fields['shipping_city']['class'][] = 'form-group';
+	$fields['shipping_city']['input_class'][] = 'form-control';
+	$fields['shipping_city']['placeholder'] = 'Address Line 2';
+
+
+	// State Selection
+	$fields['shipping_state']['class'][] = 'form-group';
+	$fields['shipping_state']['input_class'][] = 'form-control custom-select';
+
+	// Post Code
+	$fields['shipping_postcode']['class'][] = 'form-group';
+	$fields['shipping_postcode']['input_class'][] = 'form-control';
+	$fields['shipping_postcode']['placeholder'] = 'Enter Post Code';
+
+	// Phone Number
+	$fields['shipping_phone']['class'][] = 'form-group';
+	$fields['shipping_phone']['input_class'][] = 'form-control';
+	$fields['shipping_phone']['placeholder'] = 'Your Phone Number';
+
+	// Phone Number
+	$fields['shipping_email']['class'][] = 'form-group';
+	$fields['shipping_email']['input_class'][] = 'form-control';
+	$fields['shipping_email']['placeholder'] = 'Enter Email Address';
+
+	return $fields;
+}
+add_filter( 'woocommerce_shipping_fields', 'saimon_woocommerce_shipping_fields' );
