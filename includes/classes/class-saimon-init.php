@@ -36,14 +36,16 @@ class Saimon_Init {
 	}
 
 	public function saimon_theme_styles(){
-		wp_enqueue_style('fontawesome', ASSET_URL . '/css/fontawesome.min.css', array(), null, 'all');
+		wp_enqueue_style('lightbox', ASSET_URL . '/css/lightbox.min.css', array(), null, 'all');
+		wp_enqueue_style('fontawesome', ASSET_URL . '/css/fontawesome.min.css', array('lightbox'), null, 'all');
 		wp_enqueue_style('mdb', ASSET_URL . '/css/mdb.min.css', array('fontawesome'), null, 'all');
 		wp_enqueue_style('theme', ASSET_URL . '/css/theme.css', array('mdb'), null, 'all');
 		wp_enqueue_style('custom', get_stylesheet_uri(), array('theme'), null, 'all');
 	}
 
 	public function saimon_theme_scripts(){
-		wp_enqueue_script('mdb', ASSET_URL . 'js/mdb.min.js', array('jquery'), null, true);
+		wp_enqueue_script('lightbox', ASSET_URL . 'js/lightbox.min.js', array('jquery'), null, true);
+		wp_enqueue_script('mdb', ASSET_URL . 'js/mdb.min.js', array('lightbox'), null, true);
 		wp_enqueue_script('custom', ASSET_URL . 'js/custom.js', array('mdb'), null, true);
 	}
 

@@ -441,6 +441,68 @@ Redux::setSection( $opt_name, array(
     )
 ) );
 
+// Social Share Options
+Redux::setSection( $opt_name, array(
+    'title'      => __( 'Social Share', 'saimon' ),
+    'id'         => 'saimon-social-share',
+    'icon'       => 'el el-envelope',
+    'fields'     => array(
+        array(
+            'id'            => 'social-share-init',
+            'type'          => 'switch',
+            'title'         => __( 'Show Share Options', 'saimon' ),
+            'default'       => 1,
+            'off'           => 'No',
+            'on'            => 'Yes',
+        ),
+        array(
+            'id'            => 'saimon-facebook-share',
+            'type'          => 'switch',
+            'required'      => array( 'social-share-init', '=', '1' ),
+            'title'         => __( 'Facebook', 'saimon' ),
+            'default'       => 1,
+            'on'            => 'Yes',
+            'off'           => 'No',
+        ),
+        array(
+            'id'            => 'saimon-twitter-share',
+            'type'          => 'switch',
+            'required'      => array( 'social-share-init', '=', '1' ),
+            'title'         => __( 'Twitter', 'saimon' ),
+            'default'       => 1,
+            'on'            => 'Yes',
+            'off'           => 'No',
+        ),
+        array(
+            'id'            => 'saimon-linkedin-share',
+            'type'          => 'switch',
+            'required'      => array( 'social-share-init', '=', '1' ),
+            'title'         => __( 'Linkedin', 'saimon' ),
+            'default'       => 1,
+            'on'            => 'Yes',
+            'off'           => 'No',
+        ),
+        array(
+            'id'            => 'saimon-whatsapp-share',
+            'type'          => 'switch',
+            'required'      => array( 'social-share-init', '=', '1' ),
+            'title'         => __( 'Whatsapp', 'saimon' ),
+            'default'       => 1,
+            'on'            => 'Yes',
+            'off'           => 'No',
+        ),
+        array(
+            'id'            => 'saimon-pinterest-share',
+            'type'          => 'switch',
+            'required'      => array( 'social-share-init', '=', '1' ),
+            'title'         => __( 'Pinterest', 'saimon' ),
+            'default'       => 1,
+            'on'            => 'Yes',
+            'off'           => 'No',
+        ),
+    )
+) );
+
 /*
  * <--- END SECTIONS
  */

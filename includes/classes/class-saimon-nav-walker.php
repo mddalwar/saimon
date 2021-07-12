@@ -190,7 +190,7 @@ if ( ! class_exists( 'Saimon_Nav_Walker' ) ) :
 			// If the item has_children add atts to <a>.
 			if ( $this->has_children && 0 === $depth ) {
 				$atts['href']          = '#';
-				$atts['data-toggle']   = 'dropdown';
+				$atts['data-mdb-toggle']   = 'dropdown';
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
 				$atts['class']         = 'dropdown-toggle nav-link';
