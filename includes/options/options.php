@@ -456,6 +456,14 @@ Redux::setSection( $opt_name, array(
             'on'            => 'Yes',
         ),
         array(
+            'id'            => 'social-share-position',
+            'type'          => 'switch',
+            'title'         => __( 'Icons Position', 'saimon' ),
+            'default'       => 1,
+            'off'           => 'Right',
+            'on'            => 'Left',
+        ),
+        array(
             'id'            => 'saimon-facebook-share',
             'type'          => 'switch',
             'required'      => array( 'social-share-init', '=', '1' ),

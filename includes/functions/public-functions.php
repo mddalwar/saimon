@@ -21,3 +21,14 @@ function pm_con_class(){
 	
 	return implode( " ", $menu_con_class );
 }
+
+if( ! function_exists( 'find_option' ) ){
+
+	function find_option( $key = null ){
+		if( $key != null ){
+			global $saimon;
+
+			return $saimon[$key];
+		}
+	}
+}

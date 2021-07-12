@@ -12,7 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 global $saimon;
 
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

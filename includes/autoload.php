@@ -17,7 +17,6 @@ class Saimon_Autoloader {
 
 	public function __construct(){
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon.php' );
-		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-product-options.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-init.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'functions/public-functions.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'functions/admin.php' );
@@ -36,7 +35,8 @@ class Saimon_Autoloader {
 
 		if( class_exists( 'Redux' ) ){
 			require_once wp_normalize_path( INCLUDE_DIR . 'options/options.php' );
-		}		
+			require_once wp_normalize_path( INCLUDE_DIR . 'post-types/services.php' );
+		}
 
 		if( defined( 'ELEMENTOR_PATH' ) ){
 			require INCLUDE_DIR . '/classes/elementor/elementor-widgets-init.php';

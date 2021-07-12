@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct access denied.' );
 }
 ?>
-
 	<footer class="bg-dark text-center text-white">
 		<!-- Grid container -->
 		<div class="container p-4 pb-0">
@@ -55,6 +54,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<!-- Copyright -->
 	</footer>
+
+	<?php if( find_option( 'social-share-init' ) == 1 ) : ?>
+	<div class="sss-wrapper <?php if( find_option( 'social-share-position' ) ) {echo 'left'; }else{ echo 'right' ; }?>">
+		<ul>
+			<li>
+				<a class="btn btn-primary" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+			</li>
+			<li>
+				<a class="btn btn-primary" style="background-color: #55acee;" href="#!" role="button"><i class="fab fa-twitter"></i></a></li>
+			<li>
+				<a class="btn btn-primary" style="background-color: #dd4b39;" href="#!" role="button"><i class="fab fa-google"></i></a>
+			</li>
+		</ul>
+	</div>
+	<?php endif; ?>
+	
 	<?php wp_footer(); ?>
 </body>
 </html>	

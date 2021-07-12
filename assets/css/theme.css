@@ -412,3 +412,32 @@ input.submit {
 	margin-bottom: 2rem;
 	font-size: 20px;
 }
+.sss-wrapper {
+	position: fixed;
+	top: 50%;
+}
+.sss-wrapper.right {
+	right: 0;
+}
+.sss-wrapper.left {	
+	left: 0;
+}
+
+.sss-wrapper ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.sss-wrapper ul li a {
+	border-radius: 0 !important;
+	width: 45px;
+	padding: .5rem !important;
+	-webkit-transition: all 0.2s 0s ease;
+	-moz-transition: all 0.2s 0s ease;
+	-o-transition: all 0.2s 0s ease;
+	transition: all 0.2s 0s ease;
+}
+.sss-wrapper ul li a:hover {
+	color: #1266f1 !important;
+	background-color: #ffffff !important;
+}

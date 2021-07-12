@@ -51,4 +51,3 @@ if ( ! defined( 'SAIMON_ADMIN_DIR' ) ) {
 
 require_once wp_normalize_path( get_template_directory() . '/includes/boot.php' );
 
-
