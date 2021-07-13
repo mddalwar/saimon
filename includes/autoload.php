@@ -32,10 +32,10 @@ class Saimon_Autoloader {
 		}
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/class-saimon-comment-walker.php' );
 		require_once wp_normalize_path( INCLUDE_DIR . 'classes/widgets/class-about-widget.php' );
+		require_once wp_normalize_path( INCLUDE_DIR . 'post-types/services.php' );
 
 		if( class_exists( 'Redux' ) ){
 			require_once wp_normalize_path( INCLUDE_DIR . 'options/options.php' );
-			require_once wp_normalize_path( INCLUDE_DIR . 'post-types/services.php' );
 		}
 
 		if( defined( 'ELEMENTOR_PATH' ) ){

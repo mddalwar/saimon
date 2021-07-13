@@ -445,7 +445,7 @@ Redux::setSection( $opt_name, array(
 Redux::setSection( $opt_name, array(
     'title'      => __( 'Social Share', 'saimon' ),
     'id'         => 'saimon-social-share',
-    'icon'       => 'el el-envelope',
+    'icon'       => 'el el-slideshare',
     'fields'     => array(
         array(
             'id'            => 'social-share-init',

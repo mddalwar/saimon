@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct access denied.' );
 }
 global $saimon;
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

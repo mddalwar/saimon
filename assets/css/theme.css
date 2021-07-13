@@ -6,6 +6,21 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 	color: #222222 !important;
 }
+.overlay {
+	position: relative;
+	z-index: 1;
+}
+.overlay::after {
+	background: #000 none repeat scroll 0 0;
+	content: "";
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
 .pt-50 {
 	padding-top: 50px;
 }
@@ -440,4 +455,37 @@ input.submit {
 .sss-wrapper ul li a:hover {
 	color: #1266f1 !important;
 	background-color: #ffffff !important;
+}
+.dropdown-menu {
+	margin-top: 17px !important;
+	border-radius: 0;
+}
+.dropdown-menu li a {
+	color: rgba(0,0,0,.55);
+}
+.dropdown-menu .dropdown-item {
+	font-size: 16px;
+	border-radius: 0;
+}
+.dropdown-menu > li:first-child, .dropdown-menu > li:first-child .dropdown-item, .card .bg-image {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.dropdown-toggle::after {
+	margin-left: 10px;
+}
+
+.hightlighted-card {
+	padding: 80px 30px;
+	transition: .5s;
+	background-color: #222222;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.hightlighted-card:hover {
+	background-size: 120%;
+}
+h3.highlighted {
+	font-size: 50px;
 }
